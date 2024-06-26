@@ -53,7 +53,7 @@ public class ProgettoCalcolatore {
 				case 9:
 					// area pentagono regolare A=p·a/2 dividendo per due il prodotto tra il
 					// perimetro e l'apotema
-					// perimetro p= L*5
+					// perimetro p= L*5 fine
 
 					boolean condizioneLatoP = true;
 					do {
