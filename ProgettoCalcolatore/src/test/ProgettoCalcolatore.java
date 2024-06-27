@@ -136,10 +136,83 @@ public class ProgettoCalcolatore {
 					}while (condizioneLatoT);
 					break;
 					
-				case 5:
+		case 5: //Triangolo rettangolo
+					 double cateto1;
+                     do {
+                         System.out.print("Inserisci il valore del cateto 1: ");
+                         while (!input.hasNextDouble()) {
+                             System.out.println("Inserisci un dato valido!");
+                             input.next();
+                             System.out.print("Inserisci il valore del cateto 1: ");
+                         }
+                         cateto1 = input.nextDouble();
+                         if (cateto1 <= 0) {
+                             System.out.println("Inserisci un valore positivo!");
+                         }
+                     } while (cateto1 <= 0);
 
+                     double  cateto2;
+                     do {
+                         System.out.print("Inserisci il valore del cateto 2: ");
+                         while (!input.hasNextDouble()) {
+                             System.out.println("Inserisci un dato valido!");
+                             input.next();
+                             System.out.print("Inserisci il valore del cateto 2: ");
+                         }
+                         cateto2 = input.nextDouble();
+                         if (cateto2 <= 0) {
+                             System.out.println("Inserisci un valore positivo!");
+                         }
+                     } while (cateto2 <= 0);
+
+                     double ipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+                     System.out.println("Il perimetro del triangolo rettangolo è uguale a: " + (cateto1 + cateto2 + ipotenusa));
+                     System.out.println("L'area del triangolo rettangolo è uguale a: " + (cateto1 * cateto2) / 2);
 					break;
-				case 6:
+		case 6: //Trapezio
+					double baseMaggioreTrapezio;
+                    do {
+                        System.out.print("Inserisci il valore della base maggiore del trapezio: ");
+                        while (!input.hasNextDouble()) {
+                            System.out.println("Inserisci un dato valido!");
+                            input.next();
+                            System.out.print("Inserisci il valore della base maggiore del trapezio: ");
+                        }
+                        baseMaggioreTrapezio = input.nextDouble();
+                        if (baseMaggioreTrapezio <= 0) {
+                            System.out.println("Inserisci un valore positivo!");
+                        }
+                    } while (baseMaggioreTrapezio <= 0);
+
+                    double baseMinoreTrapezio;
+                    do {
+                        System.out.print("Inserisci il valore della base minore del trapezio: ");
+                        while (!input.hasNextDouble()) {
+                            System.out.println("Inserisci un dato valido!");
+                            input.next();
+                            System.out.print("Inserisci il valore della base minore del trapezio: ");
+                        }
+                        baseMinoreTrapezio = input.nextDouble();
+                        if (baseMinoreTrapezio <= 0) {
+                            System.out.println("Inserisci un valore positivo!");
+                        }
+                    } while (baseMinoreTrapezio <= 0);
+
+                    double altezzaTrapezio;
+                    do {
+                        System.out.print("Inserisci il valore dell'altezza del trapezio: ");
+                        while (!input.hasNextDouble()) {
+                            System.out.println("Inserisci un dato valido!");
+                            input.next();
+                            System.out.print("Inserisci il valore dell'altezza del trapezio: ");
+                        }
+                        altezzaTrapezio = input.nextDouble();
+                        if (altezzaTrapezio <= 0) {
+                            System.out.println("Inserisci un valore positivo!");
+                        }
+                    } while (altezzaTrapezio <= 0);
+
+                    System.out.println("L'area del trapezio è uguale a: " + ((baseMaggioreTrapezio + baseMinoreTrapezio) * altezzaTrapezio) / 2);
 
 					break;
 					
