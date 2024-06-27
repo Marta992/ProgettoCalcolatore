@@ -135,18 +135,94 @@ public class ProgettoCalcolatore {
 						}
 					}while (condizioneLatoT);
 					break;
+					
 				case 5:
 
 					break;
 				case 6:
 
 					break;
+					
 				case 7:
-
+					//perimetro rombo = 4* D;
+					//area rombo = (D * d )/2;
+					
+					boolean diagonaleMaggiore = true;
+					boolean diagonaleMinore = true;
+					
+					do {
+					    System.out.print("Inserisci il valore della diagonale maggiore: ");
+					    if (input.hasNextDouble()) {
+					        double diagonaleM = input.nextDouble();
+					        if (diagonaleM > 0) { // Controllo se il valore è maggiore di zero
+					            diagonaleMaggiore = false;
+					            do {
+					                System.out.print("Inserisci il valore della diagonale minore: ");
+					                if (input.hasNextDouble()) {
+					                    double diagonaleMn = input.nextDouble();
+					                    if (diagonaleMn > 0) { // Controllo se il valore è maggiore di zero
+					                        System.out.println("Il perimetro del rombo è: " + 4 * diagonaleM);
+					                        System.out.println("L'area del rombo è: " + (diagonaleM * diagonaleMn) / 2);
+					                        diagonaleMinore = false;
+					                    } else {
+					                        System.out.println("Il valore deve essere maggiore di zero. Riprova.");
+					                    }
+					                } else {
+					                    input.next(); // Scarta l'input non valido
+					                    System.out.println("Inserisci una scelta valida.");
+					                }
+					            } while (diagonaleMinore);
+					        } else {
+					            System.out.println("Il valore deve essere maggiore di zero. Riprova.");
+					        }
+					    } else {
+					        input.next(); // Scarta l'input non valido
+					        System.out.println("Inserisci una scelta valida.");
+					    }
+					} while (diagonaleMaggiore);
+					
 					break;
+					
 				case 8:
+					// area parallelogramma A = b*h
+					// perimetro parallelogramma p = 2(b+h)
+					
+					boolean condizioneBase = true;
+					
+					do {
+					    System.out.print("inserisci il valore della base: ");
+					    if (input.hasNextDouble()) {
+					        double base = input.nextDouble();
+					        if (base > 0) { // Controllo se il valore della base è maggiore di zero
+					            condizioneBase = false;
+					            boolean condizioneAltezza = true;
+					            do {
+					                System.out.print("Inserisci il valore dell'altezza: ");
+					                if (input.hasNextDouble()) {
+					                    double altezza = input.nextDouble();
+					                    if (altezza > 0) { // Controllo se il valore dell'altezza è maggiore di zero
+					                        System.out.println("Il perimetro del parallelogramma è: " + 2 * (base + altezza));
+					                        System.out.println("L'area del parallelogramma è: " + base * altezza);
+					                        condizioneAltezza = false;
+					                    } else {
+					                        System.out.println("Il valore dell'altezza deve essere maggiore di zero. Riprova.");
+					                    }
+					                } else {
+					                    input.next();
+					                    System.out.println("Inserisci una scelta valida");
+					                }
+					            } while (condizioneAltezza);
+					        } else {
+					            System.out.println("Il valore della base deve essere maggiore di zero. Riprova.");
+					        }
+					    } else {
+					        input.next();
+					        System.out.println("Inserisci una scelta valida");
+					    }
+					} while (condizioneBase);
 
 					break;
+					
 				case 9:
 					// area pentagono regolare A=p·a/2 dividendo per due il prodotto tra il
 					// perimetro e l'apotema
@@ -178,6 +254,7 @@ public class ProgettoCalcolatore {
 					} while (condizioneLatoP);
 
 					break;
+					
 				case 10:
 					boolean condizioneLatoE = true;
 					do {
